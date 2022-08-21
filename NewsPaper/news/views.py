@@ -39,22 +39,14 @@ class PostDetailView(DetailView):
 class PostCreateView(CreateView):
     template_name = 'flatpages/post_create.html'
     form_class = PostForm
-    permission_required = ('news.add_post',
-                           'news.change_post',
-                           'news.delete_post')
-
+    
 class PostUpdateView(UpdateView):
     template_name = 'flatpages/post_create.html'
     form_class = PostForm
     queryset = Post.objects.all()
-    permission_required = ('news.add_post',
-                           'news.change_post',
-                           'news.delete_post')
-
+    
 class PostDeleteView(DeleteView):
     template_name = 'flatpages/post_delete.html'
     queryset = Post.objects.all()
     success_url = '/posts/'
-    permission_required = ('news.add_post',
-                           'news.change_post',
-                           'news.delete_post')
+    
