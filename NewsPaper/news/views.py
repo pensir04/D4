@@ -39,14 +39,15 @@ class PostDetailView(DetailView):
 class PostCreateView(CreateView):
     template_name = 'flatpages/post_create.html'
     form_class = PostForm
-    
+
+
 class PostUpdateView(UpdateView):
     template_name = 'flatpages/post_create.html'
     form_class = PostForm
     queryset = Post.objects.all()
-    
+
+
 class PostDeleteView(DeleteView):
     template_name = 'flatpages/post_delete.html'
     queryset = Post.objects.all()
     success_url = '/posts/'
-    
